@@ -10,7 +10,10 @@ const search = (query) => {
   return wikipedia.search(query).then((data) => {
     // TODO
     if (!resultStore.isOutdated(requested)){
-      resultStore.setState(data);
+      const newResults = data[1].map((title, i) => {
+        return {title: title, description: data[2][i], link: data[3][i]}
+      })
+      resultStore.setState({results: newResults, updated: requested});
     }
   });
 };
