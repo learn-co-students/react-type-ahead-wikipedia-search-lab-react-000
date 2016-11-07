@@ -9,8 +9,7 @@ const search = (query) => {
 
   return wikipedia.search(query).then((data) => {
     // TODO
-    debugger;
-    if (!resultStore.isOutdated(data.date)){
+    if (!resultStore.isOutdated(requested)){
       resultStore.setState(data);
     }
   });
