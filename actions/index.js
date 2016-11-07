@@ -9,6 +9,10 @@ const search = (query) => {
 
   return wikipedia.search(query).then((data) => {
     // TODO
+    debugger;
+    if (!resultStore.isOutdated(data.date)){
+      resultStore.setState(data);
+    }
   });
 };
 
