@@ -4,8 +4,9 @@ const React = require('react');
 
 class SearchField extends React.Component {
   render(){
+    const {value, onChange} = this.props
     return(
-      <input />
+      <input className="search-field" value={value} onChange={onChange}/>
     )
   }
 }
