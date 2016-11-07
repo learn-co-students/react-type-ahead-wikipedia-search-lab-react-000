@@ -10,4 +10,7 @@ class ResultStore extends Store {
   
 }
 
-module.exports = new ResultStore({results: []});
+module.exports = new ResultStore({
+  results: [],
+  updated: new Date()
+});
