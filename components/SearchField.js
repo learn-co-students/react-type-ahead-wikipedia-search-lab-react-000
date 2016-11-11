@@ -2,8 +2,13 @@
 
 const React = require('react');
 
-const SearchField = props => (
-  <input />
-);
+class SearchField extends React.Component {
+  render(){
+    const {value, onChange} = this.props
+    return(
+      <input className="search-field" value={value} onChange={onChange}/>
+    )
+  }
+}
 
 module.exports = SearchField;
